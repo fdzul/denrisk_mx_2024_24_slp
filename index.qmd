@@ -386,12 +386,61 @@ flexdashboard::gauge(round((sum(y_hot$n_cases)/sum(y$n_cases))*100, digits = 1),
 
 ::: panel-tabset
 
+### [**Ciudad Valles**]{style="color:#990000"}
+
+```{r vector_hotspots_cd_valles, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_24_san_luis_potosi,
+                           locality = "Cuidad Valles",
+                           cve_edo = "24",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark")
+```
+
+### [**Tamuin**]{style="color:#990000"}
+
+```{r vector_hotspots_tamuin, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_24_san_luis_potosi,
+                           locality = "Tamuin",
+                           cve_edo = "24",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark")
+```
+
+
+### [**Ebano**]{style="color:#990000"}
+
+```{r vector_hotspots_ebano, dpi = 300, warning=FALSE, message=FALSE}
+deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_24_san_luis_potosi,
+                           locality = "Ebano",
+                           cve_edo = "24",
+                           palette = rcartocolor::carto_pal,
+                           name = "SunsetDark")
+```
+
+
 :::
 
 
 # [**Escenarios Epidemiológicos**]{style="font-size:2pt"}
 
 ::: panel-tabset
+
+### [**Ciudad Valles**]{style="color:#990000"}
+
+```{r risk_ageb_cd_valles}
+# Step 1. calculate the risk ####
+risk <- denhotspots::risk_ageb(betas = denmex::eggs_betas_24_san_luis_potosi,
+                               hotspots = denmex::den_hotspots,
+                               intensity_perc = 25,
+                               locality = "Ciudad Valles",
+                               cve_edo = "24")
+
+# Step 2. map ####
+denhotspots::map_risk(risk = risk,
+                      staticmap = FALSE)
+
+```
+
 
 :::
 
