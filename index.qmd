@@ -1,5 +1,5 @@
 ---
-title: "Programa de Prevención y Control del Dengue | 2024"
+title: "Programa de Prevención y Control del Dengue | 2025"
 format: 
   dashboard:
     nav-buttons: [twitter, github, facebook]
@@ -392,6 +392,7 @@ flexdashboard::gauge(round((sum(y_hot$n_cases)/sum(y$n_cases))*100, digits = 1),
 deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_24_san_luis_potosi,
                            locality = "Cuidad Valles",
                            cve_edo = "24",
+                           static_map = TRUE,
                            palette = rcartocolor::carto_pal,
                            name = "SunsetDark")
 ```
@@ -402,6 +403,7 @@ deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_24_san_luis_potosi,
 deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_24_san_luis_potosi,
                            locality = "Tamuin",
                            cve_edo = "24",
+                           static_map = TRUE,
                            palette = rcartocolor::carto_pal,
                            name = "SunsetDark")
 ```
@@ -413,6 +415,7 @@ deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_24_san_luis_potosi,
 deneggs::map_eggs_hotspots(betas = denmex::eggs_betas_24_san_luis_potosi,
                            locality = "Ebano",
                            cve_edo = "24",
+                           static_map = TRUE,
                            palette = rcartocolor::carto_pal,
                            name = "SunsetDark")
 ```
